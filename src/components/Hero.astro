@@ -1,0 +1,42 @@
+---
+import { Image } from 'astro:assets'
+import profileImage from '../assets/uday-image.jpg'
+import SocialsBox from './SocialsBox.astro'
+
+type Props = {}
+const {} = Astro.props
+---
+
+<section
+    class='mx-auto my-10 flex max-w-4xl flex-col-reverse items-center gap-8 px-8 md:flex-row-reverse md:gap-12'
+>
+    {/* Text & Socials */}
+    <div
+        class='flex flex-col justify-center w-full md:w-3/5 md:items-start md:text-left text-center items-center gap-6'
+    >
+        {/* Text Section */}
+        <div class='space-y-4'>
+            <h1 class='text-4xl font-bold md:text-5xl'>Hi, I'm Uday</h1>
+            <h2 class='text-foreground text-lg leading-relaxed md:text-xl'>
+                A Full Stack Developer focused on
+                Backend Engineering, Scalable Systems, and Cloud
+            </h2>
+        </div>
+
+        <SocialsBox />
+    </div>
+
+    {/* Image Section */}
+    <div class='flex w-full md:w-2/5 items-center justify-center md:justify-start'>
+        <div
+            class='aspect-square w-48 sm:w-56 md:w-64 overflow-hidden rounded-full border-4 border-foreground shadow-lg transition-transform duration-300 hover:scale-105'
+        >
+            <Image
+                src={profileImage}
+                alt='Uday Sapate'
+                class='h-full w-full object-cover object-[center_20%]'
+                loading={'eager'}
+            />
+        </div>
+    </div>
+</section>

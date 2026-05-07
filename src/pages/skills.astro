@@ -1,0 +1,275 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import { Card, CardContent } from '@/components/ui/card'
+
+// Languages
+import cppLogo from '@/assets/logos/icons8-c++-64.png'
+import jsLogo from '@/assets/logos/icons8-javascript-64.png'
+import javaLogo from '@/assets/logos/icons8-java-64.png'
+
+// Frontend
+import htmlLogo from '@/assets/logos/html.svg'
+import cssLogo from '@/assets/logos/css.svg'
+import reactLogo from '@/assets/logos/react.svg'
+import tailwindLogo from '@/assets/logos/tailwindcss.svg'
+
+// Backend
+import springBootLogo from '@/assets/logos/icons8-spring-boot.svg'
+import restApiLogo from '@/assets/logos/rest-api-blue-logo-22098.svg'
+import microservicesLogo from '@/assets/logos/icons8-microservices-30.png'
+import jwtLogo from '@/assets/logos/icons8-jwt-64.png'
+import hibernateLogo from '@/assets/logos/hibernate.svg'
+
+// Databases
+import mysqlLogo from '@/assets/logos/icons8-mysql-64.png'
+import mongoLogo from '@/assets/logos/mongodb.svg'
+
+// Cloud & DevOps
+import awsLogo from '@/assets/logos/aws-svgrepo-com.svg'
+import dockerLogo from '@/assets/logos/docker-logo-svgrepo-com.svg'
+import jenkinsLogo from '@/assets/logos/icons8-jenkins-64.png'
+import cicdLogo from '@/assets/logos/cicd.svg'
+
+// Development Tools
+import gitLogo from '@/assets/logos/git.svg'
+import githubLogo from '@/assets/logos/github.svg'
+import postmanLogo from '@/assets/logos/postman.svg'
+import vscodeLogo from '@/assets/logos/vs-code.svg'
+
+// CS Fundamentals
+import dsaLogo from '@/assets/logos/dsa.svg'
+import oopLogo from '@/assets/logos/oop.svg'
+import dbmsLogo from '@/assets/logos/dbms.svg'
+import osLogo from '@/assets/logos/os.svg'
+import networkingLogo from '@/assets/logos/networking.svg'
+
+const languages = [
+    { name: 'C++', logo: cppLogo },
+    { name: 'JavaScript', logo: jsLogo },
+    { name: 'Java', logo: javaLogo },
+]
+
+const frontend = [
+    { name: 'HTML', logo: htmlLogo },
+    { name: 'CSS', logo: cssLogo },
+    { name: 'React.js', logo: reactLogo },
+    { name: 'Tailwind CSS', logo: tailwindLogo },
+]
+
+const backend = [
+    { name: 'Spring Boot', logo: springBootLogo },
+    { name: 'REST APIs', logo: restApiLogo },
+    { name: 'Microservices', logo: microservicesLogo },
+    { name: 'JWT Authentication', logo: jwtLogo },
+    { name: 'Hibernate JPA', logo: hibernateLogo },
+]
+
+const databases = [
+    { name: 'MySQL', logo: mysqlLogo },
+    { name: 'MongoDB', logo: mongoLogo },
+]
+
+const cloudDevOps = [
+    { name: 'AWS', logo: awsLogo },
+    { name: 'Docker', logo: dockerLogo },
+    { name: 'Jenkins', logo: jenkinsLogo },
+    { name: 'CI/CD', logo: cicdLogo },
+]
+
+const devTools = [
+    { name: 'Git', logo: gitLogo },
+    { name: 'GitHub', logo: githubLogo },
+    { name: 'Postman', logo: postmanLogo },
+    { name: 'VS Code', logo: vscodeLogo },
+]
+
+const csFundamentals = [
+    { name: 'Data Structures and Algorithms', logo: dsaLogo },
+    { name: 'OOPs', logo: oopLogo },
+    { name: 'DBMS', logo: dbmsLogo },
+    { name: 'Operating Systems', logo: osLogo },
+    { name: 'Computer Networks', logo: networkingLogo },
+]
+---
+
+<Layout
+    title='Skills'
+    description='A showcase of Uday Sapate's core skills, technologies, and development tools'
+>
+    <section class='py-8 px-4 lg:px-0 space-y-8 overflow-auto'>
+        <!-- Languages -->
+        <div>
+            <h2 class='text-2xl font-semibold mb-2'>Languages</h2>
+            <div class='h-1 w-32 bg-red-500 mb-6 rounded-full'></div>
+
+            <div class='flex gap-4 overflow-x-auto pb-2 snap-x flex-wrap'>
+                {
+                    languages.map((skill) => (
+                        <Card className='flex items-center justify-center gap-3 py-2.5 px-4 bg-secondary-background dark:bg-white dark:border-black transition hover:shadow-md hover:border-primary/30'>
+                            <CardContent className='flex items-center justify-center gap-3 p-0'>
+                                <img
+                                    src={skill.logo.src}
+                                    alt={skill.name}
+                                    class='h-8 w-8 object-contain'
+                                />
+                                <span class='text-md font-medium text-foreground dark:text-black'>
+                                    {skill.name}
+                                </span>
+                            </CardContent>
+                        </Card>
+                    ))
+                }
+            </div>
+        </div>
+
+        <!-- Frontend Technologies -->
+        <div>
+            <h2 class='text-2xl font-semibold mb-2'>Frontend Technologies</h2>
+            <div class='h-1 w-48 bg-blue-500 mb-6 rounded-full'></div>
+
+            <div class='flex gap-4 overflow-x-auto pb-2 snap-x flex-wrap'>
+                {
+                    frontend.map((skill) => (
+                        <Card className='flex items-center justify-center gap-3 py-2.5 px-4 bg-secondary-background dark:bg-white dark:border-black transition hover:shadow-md hover:border-primary/30'>
+                            <CardContent className='flex items-center justify-center gap-3 p-0'>
+                                <img
+                                    src={skill.logo.src}
+                                    alt={skill.name}
+                                    class='h-8 w-8 object-contain'
+                                />
+                                <span class='text-md font-medium text-foreground dark:text-black'>
+                                    {skill.name}
+                                </span>
+                            </CardContent>
+                        </Card>
+                    ))
+                }
+            </div>
+        </div>
+
+        <!-- Backend Technologies -->
+        <div>
+            <h2 class='text-2xl font-semibold mb-2'>Backend Technologies</h2>
+            <div class='h-1 w-52 bg-green-500 mb-6 rounded-full'></div>
+
+            <div class='flex gap-4 overflow-x-auto pb-2 snap-x flex-wrap'>
+                {
+                    backend.map((skill) => (
+                        <Card className='flex items-center justify-center gap-3 py-2.5 px-4 bg-secondary-background dark:bg-white dark:border-black transition hover:shadow-md hover:border-primary/30'>
+                            <CardContent className='flex items-center justify-center gap-3 p-0'>
+                                <img
+                                    src={skill.logo.src}
+                                    alt={skill.name}
+                                    class='h-8 w-8 object-contain'
+                                />
+                                <span class='text-md font-medium text-foreground dark:text-black'>
+                                    {skill.name}
+                                </span>
+                            </CardContent>
+                        </Card>
+                    ))
+                }
+            </div>
+        </div>
+
+        <!-- Databases -->
+        <div>
+            <h2 class='text-2xl font-semibold mb-2'>Databases</h2>
+            <div class='h-1 w-32 bg-yellow-500 mb-6 rounded-full'></div>
+
+            <div class='flex gap-4 overflow-x-auto pb-2 snap-x flex-wrap'>
+                {
+                    databases.map((skill) => (
+                        <Card className='flex items-center justify-center gap-3 py-2.5 px-4 bg-secondary-background dark:bg-white dark:border-black transition hover:shadow-md hover:border-primary/30'>
+                            <CardContent className='flex items-center justify-center gap-3 p-0'>
+                                <img
+                                    src={skill.logo.src}
+                                    alt={skill.name}
+                                    class='h-8 w-8 object-contain'
+                                />
+                                <span class='text-md font-medium text-foreground dark:text-black'>
+                                    {skill.name}
+                                </span>
+                            </CardContent>
+                        </Card>
+                    ))
+                }
+            </div>
+        </div>
+
+        <!-- Cloud and DevOps -->
+        <div>
+            <h2 class='text-2xl font-semibold mb-2'>Cloud and DevOps</h2>
+            <div class='h-1 w-44 bg-purple-500 mb-6 rounded-full'></div>
+
+            <div class='flex gap-4 overflow-x-auto pb-2 snap-x flex-wrap'>
+                {
+                    cloudDevOps.map((skill) => (
+                        <Card className='flex items-center justify-center gap-3 py-2.5 px-4 bg-secondary-background dark:bg-white dark:border-black transition hover:shadow-md hover:border-primary/30'>
+                            <CardContent className='flex items-center justify-center gap-3 p-0'>
+                                <img
+                                    src={skill.logo.src}
+                                    alt={skill.name}
+                                    class='h-8 w-8 object-contain'
+                                />
+                                <span class='text-md font-medium text-foreground dark:text-black'>
+                                    {skill.name}
+                                </span>
+                            </CardContent>
+                        </Card>
+                    ))
+                }
+            </div>
+        </div>
+
+        <!-- Development Tools -->
+        <div>
+            <h2 class='text-2xl font-semibold mb-2'>Development Tools</h2>
+            <div class='h-1 w-44 bg-orange-500 mb-6 rounded-full'></div>
+
+            <div class='flex gap-4 overflow-x-auto pb-2 snap-x flex-wrap'>
+                {
+                    devTools.map((skill) => (
+                        <Card className='flex items-center justify-center gap-3 py-2.5 px-4 bg-secondary-background dark:bg-white dark:border-black transition hover:shadow-md hover:border-primary/30'>
+                            <CardContent className='flex items-center justify-center gap-3 p-0'>
+                                <img
+                                    src={skill.logo.src}
+                                    alt={skill.name}
+                                    class='h-8 w-8 object-contain'
+                                />
+                                <span class='text-md font-medium text-foreground dark:text-black'>
+                                    {skill.name}
+                                </span>
+                            </CardContent>
+                        </Card>
+                    ))
+                }
+            </div>
+        </div>
+
+        <!-- Computer Science Fundamentals -->
+        <div>
+            <h2 class='text-2xl font-semibold mb-2'>Computer Science Fundamentals</h2>
+            <div class='h-1 w-64 bg-pink-500 mb-6 rounded-full'></div>
+
+            <div class='flex gap-4 overflow-x-auto pb-2 snap-x flex-wrap'>
+                {
+                    csFundamentals.map((skill) => (
+                        <Card className='flex items-center justify-center gap-3 py-2.5 px-4 bg-secondary-background dark:bg-white dark:border-black transition hover:shadow-md hover:border-primary/30'>
+                            <CardContent className='flex items-center justify-center gap-3 p-0'>
+                                <img
+                                    src={skill.logo.src}
+                                    alt={skill.name}
+                                    class='h-8 w-8 object-contain'
+                                />
+                                <span class='text-md font-medium text-foreground dark:text-black'>
+                                    {skill.name}
+                                </span>
+                            </CardContent>
+                        </Card>
+                    ))
+                }
+            </div>
+        </div>
+    </section>
+</Layout>

@@ -1,0 +1,43 @@
+---
+import { Icon } from 'astro-icon/components'
+
+const currentYear = new Date().getFullYear()
+---
+
+<footer
+    class='w-full py-6 mt-10 text-center text-sm text-gray-500 dark:text-gray-400'
+>
+    <p class='bg-secondary-background'>
+        © {currentYear} Uday Sapate. All rights reserved.
+    </p>
+    <div class='flex justify-center gap-4 mt-3'>
+        <a
+            href='https://github.com/Udaysapate212'
+            target='_blank'
+            rel='noopener noreferrer'
+            title='GitHub'
+            class='hover:text-primary transition-colors'
+            aria-label='GitHub'
+        >
+            <Icon name='mdi:github' class='h-6 w-6' />
+        </a>
+        <a
+            href='https://linkedin.com/in/uday-sapate-b99872282'
+            target='_blank'
+            rel='noopener noreferrer'
+            title='LinkedIn'
+            class='hover:text-primary transition-colors'
+            aria-label='LinkedIn'
+        >
+            <Icon name='mdi:linkedin' class='h-6 w-6' />
+        </a>
+        <a
+            href='mailto:udaysapate212@gmail.com'
+            title='Email'
+            class='hover:text-primary transition-colors'
+            aria-label='Email'
+        >
+            <Icon name='mdi:email-outline' class='h-6 w-6' />
+        </a>
+    </div>
+</footer>

@@ -1,0 +1,120 @@
+---
+import { Image } from 'astro:assets'
+import Layout from '@/layouts/Layout.astro'
+import '../styles/globals.css'
+
+import SpringBootLogo from '@/assets/logos/icons8-spring-boot.svg'
+import ReactLogo from '@/assets/logos/react.svg'
+import DockerLogo from '@/assets/logos/docker-logo-svgrepo-com.svg'
+import AWSLogo from '@/assets/logos/aws-svgrepo-com.svg'
+import MicroservicesLogo from '@/assets/logos/icons8-microservices-30.png'
+import RestAPILogo from '@/assets/logos/rest-api-blue-logo-22098.svg'
+---
+
+<Layout>
+    <div
+        class='space-y-6 rounded-2xl border border-slate-200 bg-secondary-background p-6 shadow my-6'
+    >
+        {/* Intro */}
+        <div class='space-y-3'>
+            <h1 class='flex items-center gap-2 text-2xl font-bold'>Hey 👋</h1>
+            <p class='leading-relaxed'>
+                I'm <span class='font-semibold'>Uday Sapate</span>, a pre-final year Computer Engineering student at <span class='font-medium'>MIT Academy of Engineering</span> with a strong interest in Backend Development, Cloud, and DevOps.
+            </p>
+            <p class='leading-relaxed'>
+                Over the past few years, I've been building full stack and backend focused applications while continuously exploring scalable system design and cloud native technologies. I enjoy creating reliable and production ready systems that solve real world problems.
+            </p>
+        </div>
+
+        {/* Tech Stack */}
+        <div class='space-y-3'>
+            <p class='leading-relaxed'>
+                The main technologies in my toolkit are:
+            </p>
+            <div class='grid grid-cols-2 md:grid-cols-3 gap-3'>
+                <div class='flex items-center gap-2 p-2 rounded-lg bg-background/50 dark:bg-white dark:border dark:border-black'>
+                    <Image
+                        class='w-6 h-6'
+                        src={SpringBootLogo}
+                        alt='Spring Boot'
+                        loading='eager'
+                    />
+                    <strong class='text-sm dark:text-black'>Spring Boot</strong>
+                </div>
+                <div class='flex items-center gap-2 p-2 rounded-lg bg-background/50 dark:bg-white dark:border dark:border-black'>
+                    <Image
+                        class='w-6 h-6'
+                        src={ReactLogo}
+                        alt='React.js'
+                        loading='eager'
+                    />
+                    <strong class='text-sm dark:text-black'>React.js</strong>
+                </div>
+                <div class='flex items-center gap-2 p-2 rounded-lg bg-background/50 dark:bg-white dark:border dark:border-black'>
+                    <Image
+                        class='w-6 h-6'
+                        src={DockerLogo}
+                        alt='Docker'
+                        loading='eager'
+                    />
+                    <strong class='text-sm dark:text-black'>Docker</strong>
+                </div>
+                <div class='flex items-center gap-2 p-2 rounded-lg bg-background/50 dark:bg-white dark:border dark:border-black'>
+                    <Image
+                        class='w-6 h-6'
+                        src={AWSLogo}
+                        alt='AWS'
+                        loading='eager'
+                    />
+                    <strong class='text-sm dark:text-black'>AWS</strong>
+                </div>
+                <div class='flex items-center gap-2 p-2 rounded-lg bg-background/50 dark:bg-white dark:border dark:border-black'>
+                    <Image
+                        class='w-6 h-6'
+                        src={MicroservicesLogo}
+                        alt='Microservices'
+                        loading='eager'
+                    />
+                    <strong class='text-sm dark:text-black'>Microservices</strong>
+                </div>
+                <div class='flex items-center gap-2 p-2 rounded-lg bg-background/50 dark:bg-white dark:border dark:border-black'>
+                    <Image
+                        class='w-6 h-6'
+                        src={RestAPILogo}
+                        alt='REST APIs'
+                        loading='eager'
+                    />
+                    <strong class='text-sm dark:text-black'>REST APIs</strong>
+                </div>
+            </div>
+        </div>
+
+        {/* Experience */}
+        <div class='space-y-3'>
+            <p class='leading-relaxed'>
+                I've worked on projects ranging from full stack platforms and cloud native applications to microservices based systems and CI/CD workflows. Along the way, I've gained hands on experience with containerization, cloud deployment, secure authentication, and scalable backend architecture.
+            </p>
+        </div>
+
+        {/* Achievements */}
+        <div class='space-y-3'>
+            <p class='leading-relaxed'>
+                I actively practice competitive programming and problem solving, achieving <span class='font-semibold'>Knight on LeetCode</span> and <span class='font-semibold'>3 Star on CodeChef</span> while maintaining a <span class='font-semibold'>CGPA of 9.06</span>.
+            </p>
+        </div>
+
+        {/* Motivation */}
+        <div class='space-y-3'>
+            <p class='leading-relaxed'>
+                What excites me most is building scalable backend systems, automating workflows, and continuously learning new technologies in Cloud and DevOps.
+            </p>
+        </div>
+
+        {/* Conclusion */}
+        <div class='space-y-3'>
+            <p class='leading-relaxed'>
+                Feel free to explore my projects, skills, and experiences. I'm always open to connecting, collaborating, and learning from new opportunities 🚀
+            </p>
+        </div>
+    </div>
+</Layout>

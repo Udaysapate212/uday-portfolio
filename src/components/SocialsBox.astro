@@ -1,0 +1,85 @@
+---
+import SendEmail from '@lucide/astro/icons/mail'
+import Download from '@lucide/astro/icons/download'
+import FileUser from '@lucide/astro/icons/file-user'
+
+import { Button } from '@/components/ui/button'
+import { Icon } from 'astro-icon/components'
+---
+
+<div
+    class='flex items-center gap-6 rounded-2xl bg-secondary-background/70 px-5 py-2 shadow-lg backdrop-blur-sm border border-border/20 dark:border-white'
+>
+    <Button variant='outline' size='icon' asChild>
+        <a
+            href='https://github.com/Udaysapate212'
+            target='_blank'
+            aria-label='GitHub'
+            title='Visit GitHub'
+            class='transition-all duration-300 hover:scale-120 group'
+        >
+            <Icon
+                name='mdi:github'
+                class='h-6 w-6 transition-colors duration-300 group-hover:text-[#181717] dark:group-hover:text-[#f5f5f5]'
+            />
+        </a>
+    </Button>
+
+    <Button variant='outline' size='icon' asChild>
+        <a
+            href='https://leetcode.com/u/udaysapate_12/'
+            target='_blank'
+            aria-label='LeetCode'
+            title='Visit LeetCode'
+            class='transition-all duration-300 hover:scale-120 group'
+        >
+            <Icon
+                name='simple-icons:leetcode'
+                class='h-6 w-6 transition-colors duration-300 group-hover:text-[#FFA116]'
+            />
+        </a>
+    </Button>
+
+    <Button variant='outline' size='icon' asChild>
+        <a
+            href='https://linkedin.com/in/uday-sapate-b99872282'
+            target='_blank'
+            aria-label='LinkedIn'
+            title='Visit LinkedIn'
+            class='transition-all duration-300 hover:scale-120 group'
+        >
+            <Icon
+                name='mdi:linkedin'
+                class='h-6 w-6 transition-colors duration-300 group-hover:text-[#0A66C2]'
+            />
+        </a>
+    </Button>
+
+    <Button variant='outline' size='icon' asChild>
+        <a
+            href='mailto:udaysapate212@gmail.com'
+            aria-label='Email'
+            title='Send Email'
+            class='transition-all duration-300 hover:scale-120 group'
+        >
+            <SendEmail
+                class='h-6 w-6 transition-colors duration-300 group-hover:text-[#10B981]'
+            />
+        </a>
+    </Button>
+
+    <Button variant='outline' size='icon' asChild>
+        <a
+            href='/RESUME_UDAY_SAPATE.pdf'
+            target='_blank'
+            rel='noopener noreferrer'
+            aria-label='View Resume'
+            title='View Resume'
+            class='transition-all duration-300 hover:scale-120 group'
+        >
+            <FileUser
+                class='h-6 w-6 transition-colors duration-300 group-hover:text-[#8b5cf6]'
+            />
+        </a>
+    </Button>
+</div>

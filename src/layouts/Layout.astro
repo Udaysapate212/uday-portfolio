@@ -1,0 +1,138 @@
+---
+import '../styles/globals.css'
+import Hero from '@/components/Hero.astro'
+import DateTime from '@/components/DateTime.astro'
+import { ModeToggle } from '@/components/ModeToggle'
+import { TabNavigation } from '@/components/TabNavigation'
+import { Particles } from '@/components/ui/particles'
+import { ClientRouter } from 'astro:transitions'
+import Footer from '@/components/Footer.astro'
+
+interface Props {
+    title?: string
+    description?: string
+    ogImage?: string
+    canonicalURL?: string
+}
+
+const {
+    title = 'Uday Sapate - Software Developer',
+    description = 'Portfolio of Uday Sapate — Software Developer',
+    ogImage = '/og-image.jpg',
+    canonicalURL = Astro.site
+        ? new URL(Astro.url.pathname, Astro.site).href
+        : Astro.url.pathname,
+} = Astro.props
+
+const fullTitle =
+    title === 'Uday Sapate - Software Developer'
+        ? title
+        : `${title} | Uday Sapate`
+
+const ogImageUrl = Astro.site ? new URL(ogImage, Astro.site).href : ogImage
+
+// Structured Data
+const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Uday Sapate',
+    jobTitle: 'Software Developer',
+    url: Astro.site?.href,
+    sameAs: [
+        'https://linkedin.com/in/uday-sapate-b99872282',
+        'https://github.com/Udaysapate212',
+    ],
+    image: ogImageUrl,
+    description: description,
+}
+---
+
+<!doctype html>
+<html lang='en'>
+    <head>
+        <meta charset='UTF-8' />
+        <meta name='viewport' content='width=device-width' />
+        <link rel='icon' type='image/x-icon' href='/favicon.ico' />
+        <link rel='sitemap' href='/sitemap-index.xml' />
+
+        <!-- Primary Meta Tags -->
+        <title>{fullTitle}</title>
+        <meta name='description' content={description} />
+        <meta name='generator' content={Astro.generator} />
+        <link rel='canonical' href={canonicalURL} />
+
+        <!-- Open Graph -->
+        <meta property='og:type' content='website' />
+        <meta property='og:url' content={canonicalURL} />
+        <meta property='og:title' content={fullTitle} />
+        <meta property='og:description' content={description} />
+        <meta property='og:image' content={ogImageUrl} />
+
+        <!-- Structured Data -->
+        <script type='application/ld+json' set:html={JSON.stringify(jsonLd)} />
+
+        <ClientRouter />
+
+        <script is:inline>
+            function applyTheme() {
+                // Default to 'light' if no preference is saved
+                const theme = localStorage.getItem('theme') || 'light'
+                const isDark =
+                    theme === 'dark' ||
+                    (theme === 'system' &&
+                        window.matchMedia('(prefers-color-scheme: dark)')
+                            .matches)
+
+                document.documentElement.classList[isDark ? 'add' : 'remove'](
+                    'dark',
+                )
+            }
+
+            applyTheme()
+
+            // Re-apply after navigation
+            document.addEventListener('astro:after-swap', applyTheme)
+        </script>
+    </head>
+    <body
+        class='relative bg-secondary-background min-h-dvh overflow-x-hidden flex flex-col'
+    >
+        <div class='fixed inset-0 -z-10 pointer-events-none'>
+            <Particles
+                className='absolute inset-0'
+                quantity={500}
+                ease={50}
+                staticity={40}
+                size={0.5}
+                color='#888'
+                refresh
+                client:visible
+            />
+        </div>
+
+        <!-- Shared Components across all pages -->
+        <DateTime />
+        <div class='fixed top-4 right-4 z-50'>
+            <ModeToggle client:load />
+        </div>
+        <Hero />
+
+        <div class='mx-auto w-[95%] md:max-w-3xl'>
+            <TabNavigation client:load currentPath={Astro.url.pathname} />
+        </div>
+
+        <div class='mx-auto grow flex max-w-[95%] md:max-w-3xl my-2'>
+            <slot />
+        </div>
+
+        <Footer />
+    </body>
+</html>
+
+<style>
+    html,
+    body {
+        margin: 0;
+        width: 100%;
+    }
+</style>

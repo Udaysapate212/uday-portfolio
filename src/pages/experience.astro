@@ -1,0 +1,71 @@
+---
+// experience.astro
+import {
+    Card,
+    CardHeader,
+    CardTitle,
+    CardDescription,
+    CardContent,
+} from '@/components/ui/card'
+import Layout from '@/layouts/Layout.astro'
+import { marked } from 'marked'
+
+import CampusCredentialsExperience from '@/Content/CampusCredentialsExperience.md?raw'
+
+import IdCard from '@lucide/astro/icons/id-card'
+import Building from '@lucide/astro/icons/building'
+import History from '@lucide/astro/icons/history'
+
+const experiences = [
+    {
+        dates: 'June 2025 - July 2025',
+        headline: 'Full Stack Web Developer Intern',
+        description: marked(CampusCredentialsExperience),
+        organization: 'Campus Credentials',
+        location: 'Remote',
+    },
+]
+---
+
+<Layout
+    title='Experience'
+    description='A detailed overview of Uday Sapate's professional experience, highlighting roles, responsibilities, and impact across multiple organizations'
+>
+    <div class='relative max-w-3xl mx-auto py-8 px-4 lg:px-0'>
+        {
+            experiences.map((exp, index) => (
+                <div class='relative pb-8'>
+                    <div class='relative flex items-start space-x-4'>
+                        <Card className='flex-1 bg-secondary-background'>
+                            <CardHeader className='flex flex-col sm:flex-row sm:justify-between sm:items-start gap-1'>
+                                <div class='space-y-1'>
+                                    <CardTitle className='flex items-center gap-2'>
+                                        <IdCard size={20} />
+                                        {exp.headline}
+                                    </CardTitle>
+                                    <CardDescription className='flex items-center gap-2'>
+                                        <Building size={18} />
+                                        {exp.organization} • {exp.location}
+                                    </CardDescription>
+                                </div>
+
+                                <div>
+                                    <CardDescription className='flex items-center gap-2'>
+                                        <History size={20} />
+                                        {exp.dates}
+                                    </CardDescription>
+                                </div>
+                            </CardHeader>
+                            <CardContent>
+                                <div
+                                    class='prose prose-sm dark:prose-invert max-w-none'
+                                    set:html={exp.description}
+                                />
+                            </CardContent>
+                        </Card>
+                    </div>
+                </div>
+            ))
+        }
+    </div>
+</Layout>

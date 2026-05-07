@@ -1,0 +1,23 @@
+---
+// DateTime.astro
+---
+
+<div id='current-time' class='text-center mt-4' transition:persist></div>
+
+<script>
+    import { format } from 'date-fns'
+
+    function updateTime() {
+        const timeElement = document.getElementById('current-time')
+        if (timeElement) {
+            timeElement.textContent = format(
+                new Date(),
+                'EEE MMM dd yyyy, HH:mm'
+            )
+        }
+    }
+
+    updateTime()
+
+    setInterval(updateTime, 60000)
+</script>

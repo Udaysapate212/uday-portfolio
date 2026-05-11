@@ -31,19 +31,39 @@ const fullTitle =
 
 const ogImageUrl = Astro.site ? new URL(ogImage, Astro.site).href : ogImage
 
-// Structured Data
+// Structured Data for Person
 const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Person',
     name: 'Uday Sapate',
-    jobTitle: 'Software Developer',
+    jobTitle: 'Full Stack Developer',
+    description: 'Backend Focused Full Stack Developer skilled in Spring Boot, AWS, Docker, Cloud, DevOps, and scalable system design',
     url: Astro.site?.href,
     sameAs: [
-        'https://linkedin.com/in/uday-sapate-b99872282',
         'https://github.com/Udaysapate212',
+        'https://leetcode.com/u/udaysapate_12/',
+        'https://www.codechef.com/users/udaysapate_12',
+        'https://linkedin.com/in/uday-sapate-b99872282',
+        'https://instagram.com/udaysapate_10',
+        'https://udaysapate.app/RESUME_UDAY_SAPATE.pdf'
     ],
     image: ogImageUrl,
-    description: description,
+    alumniOf: {
+        '@type': 'EducationalOrganization',
+        name: 'MIT Academy of Engineering'
+    },
+    knowsAbout: [
+        'Spring Boot',
+        'React.js',
+        'Docker',
+        'AWS',
+        'Microservices',
+        'REST APIs',
+        'Cloud Computing',
+        'DevOps',
+        'Backend Development',
+        'Full Stack Development'
+    ]
 }
 ---
 
@@ -64,6 +84,8 @@ const jsonLd = {
         <!-- Primary Meta Tags -->
         <title>{fullTitle}</title>
         <meta name='description' content={description} />
+        <meta name='author' content='Uday Sapate' />
+        <meta name='keywords' content='Uday Sapate, Uday Sapate portfolio, Uday Sapate GitHub, Uday Sapate LeetCode, Uday Sapate CodeChef, Full Stack Developer, Backend Developer, Spring Boot, AWS, Docker, Cloud, DevOps' />
         <meta name='generator' content={Astro.generator} />
         <link rel='canonical' href={canonicalURL} />
 

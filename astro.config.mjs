@@ -21,6 +21,14 @@ export default defineConfig({
     vite: {
         plugins: [tailwindcss()],
     },
-    integrations: [react(), sitemap(), icon()],
+    integrations: [
+        react(), 
+        sitemap({
+            customPages: [
+                'https://udaysapate.app/RESUME_UDAY_SAPATE.pdf'
+            ]
+        }), 
+        icon()
+    ],
     trailingSlash: 'never',
 });
